@@ -3,8 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply bg-background;
+  }
+
   body {
-    @apply bg-background text-text-primary font-sans antialiased;
+    @apply min-h-screen bg-background text-text-primary font-sans antialiased overflow-x-hidden;
+    background-image:
+      radial-gradient(circle at top left, rgba(37, 99, 235, 0.28), transparent 32%),
+      radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 26%),
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: auto, auto, 80px 80px, 80px 80px;
+    background-position: center, center, center, center;
+    background-attachment: fixed;
   }
 
   /* Smooth scrolling for anchor links */
@@ -21,5 +33,19 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  @keyframes hover-float-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .hover-float-y:hover {
+    animation: hover-float-y 1.5s ease-in-out infinite;
   }
 }

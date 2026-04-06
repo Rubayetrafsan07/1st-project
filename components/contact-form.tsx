@@ -78,7 +78,7 @@ export function ContactForm() {
         return;
       }
 
-      setStatusMessage("Message saved successfully. I will get back to you soon.");
+      setStatusMessage("Message Sent successfully. I will get back to you soon.");
       setFormData({ name: "", email: "", message: "" });
     } catch {
       setErrors({ form: "Something went wrong. Please try again." });
@@ -90,10 +90,10 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-lg border border-border bg-surface/40 p-6"
+      className="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.25)] backdrop-blur-md sm:p-8"
       noValidate
     >
-      <div className="space-y-2">
+      <div className="hover-float-y space-y-2">
         <label htmlFor="name" className="text-sm font-medium text-text-primary">
           Name
         </label>
@@ -102,7 +102,7 @@ export function ContactForm() {
           type="text"
           value={formData.name}
           onChange={(event) => updateField("name", event.target.value)}
-          className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/70"
+          className="w-full rounded-xl border border-white/10 bg-background/70 px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/70 outline-none transition-colors focus:border-primary/70"
           placeholder="Your name"
         />
         {errors.name ? (
@@ -110,7 +110,7 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <div className="space-y-2">
+      <div className="hover-float-y space-y-2">
         <label htmlFor="email" className="text-sm font-medium text-text-primary">
           Email
         </label>
@@ -119,7 +119,7 @@ export function ContactForm() {
           type="email"
           value={formData.email}
           onChange={(event) => updateField("email", event.target.value)}
-          className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/70"
+          className="w-full rounded-xl border border-white/10 bg-background/70 px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/70 outline-none transition-colors focus:border-primary/70"
           placeholder="you@example.com"
         />
         {errors.email ? (
@@ -127,7 +127,7 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <div className="space-y-2">
+      <div className="hover-float-y space-y-2">
         <label htmlFor="message" className="text-sm font-medium text-text-primary">
           Message
         </label>
@@ -136,7 +136,7 @@ export function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(event) => updateField("message", event.target.value)}
-          className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/70"
+          className="w-full rounded-xl border border-white/10 bg-background/70 px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/70 outline-none transition-colors focus:border-primary/70"
           placeholder="Write your message..."
         />
         {errors.message ? (
@@ -152,7 +152,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-70"
+        className="hover-float-y rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>

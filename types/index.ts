@@ -1,3 +1,5 @@
+declare module "*.css";
+
 export interface Skill {   ///  for about page 3.2
   name: string;
   icon: string;
@@ -28,7 +30,6 @@ export interface Project {   // for projects page 3.3
   screenshots: string[];   // part of 3.4
   challenges: string;    // part of 3.4
   learnings: string;     // part of 3.4
-  liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
 }

@@ -18,24 +18,24 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-text-muted/20 bg-background">
+    <footer className="border-t border-white/10 bg-background/75 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
-        <p className="text-sm text-text-secondary">
-          © {currentYear} Your Name. All rights reserved.
+        <p className="hover-float-y text-sm text-text-secondary">
+          © {currentYear} My Portfolio. All rights reserved.
         </p>
 
         <nav aria-label="Social links">
           <ul className="flex items-center gap-4">
-            {socialLinks.map((socialLink) => {     //one item from the socialLinks array each loop
+            {socialLinks.map((socialLink) => {
               const IconComponent = socialLink.icon;
 
               return (
                 <li key={socialLink.href}>
                   <Link
                     href={socialLink.href}
-                    target="_blank"    //opens in new tab.
-                    rel="noreferrer"  //security/privacy best practice for new tabs.
-                    className="inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-text-primary"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover-float-y inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-text-secondary transition-colors hover:border-white/20 hover:text-text-primary"
                   >
                     <IconComponent className="h-4 w-4" />
                     <span>{socialLink.label}</span>

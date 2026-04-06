@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { ProjectCard } from "@/components/project-card";
-import { SectionHeading } from "@/components/section-heading";
 import { ScrollReveal } from "@/components/animations/scroll-reveal";
 import { projects } from "@/lib/data";
 
@@ -11,10 +10,20 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <SectionHeading title="My Projects" />
+    <main className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-24">
+      <div className="mb-10 space-y-3 text-center">
+        <span className="hover-float-y inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-text-secondary">
+          Portfolio
+        </span>
+        <h2 className="hover-float-y text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+          My Projects
+        </h2>
+        <p className="hover-float-y mx-auto max-w-2xl text-sm text-text-secondary sm:text-base">
+          A collection of web, desktop, and software projects built while learning and improving my craft.
+        </p>
+      </div>
       
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project, index) => (
           <ScrollReveal
             key={project.slug}
@@ -25,6 +34,6 @@ export default function ProjectsPage() {
           </ScrollReveal>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

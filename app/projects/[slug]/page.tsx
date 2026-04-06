@@ -32,7 +32,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   }
 
   return (
-    <main className="mx-auto w-full max-w-4xl px-6 py-16 sm:py-24">
+    <main className="hover-float-y mx-auto w-full max-w-4xl px-6 py-16 sm:py-24">
       <SectionHeading title={project.title} subtitle={project.description} />
 
       <section className="space-y-6 rounded-lg border border-border bg-surface/40 p-6">
@@ -67,7 +67,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           <p className="mt-2 leading-7 text-text-secondary">{project.learnings}</p>
         </div>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="hover-float-y flex flex-wrap gap-4">
           {project.githubUrl ? (
             <Link
               href={project.githubUrl}

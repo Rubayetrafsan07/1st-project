@@ -26,31 +26,31 @@ export default function AdminPage() {
   const messages = getMessages();
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
-      <h1 className="mb-8 text-3xl font-bold">Contact Form Messages</h1>
+    <div className="mx-auto max-w-4xl px-6 py-16 min-h-screen">
+      <h1 className="mb-8 text-3xl font-bold text-text-primary">Contact Form Messages</h1>
 
       {messages.length === 0 ? (
-        <p className="text-gray-600">No messages yet.</p>
+        <p className="text-text-secondary">No messages yet.</p>
       ) : (
         <div className="space-y-6">
           {messages.map((message) => (
             <div
               key={message.id}
-              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-lg border border-border bg-surface p-6 shadow-sm"
             >
               <div className="mb-4 flex items-start justify-between">
                 <div>
-                  <h3 className="text-lg text-gray-900 font-semibold">{message.name}</h3>
-                  <p className="text-sm text-gray-600">{message.email}</p>
+                  <h3 className="text-lg text-text-primary font-semibold">{message.name}</h3>
+                  <p className="text-sm text-text-secondary">{message.email}</p>
                 </div>
-                <div className="text-right text-sm text-gray-500">
+                <div className="text-right text-sm text-text-secondary">
                   {new Date(message.timestamp).toLocaleString()}
                   {!message.read && (
-                    <span className="ml-2 inline-block h-2 w-2 rounded-full bg-blue-500"></span>
+                    <span className="ml-2 inline-block h-2 w-2 rounded-full bg-primary text-white"></span>
                   )}
                 </div>
               </div>
-              <p className="whitespace-pre-wrap text-gray-800">
+              <p className="whitespace-pre-wrap text-text-primary mt-4">
                 {message.message}
               </p>
             </div>
