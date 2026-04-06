@@ -60,7 +60,6 @@ export async function POST(request: Request) {
   const { name, email, message } = validation.data;
 
   try {
-    const messages = readMessages();
     const newMessage = {
       id: Date.now().toString(),
       name,
@@ -70,8 +69,9 @@ export async function POST(request: Request) {
       read: false,
     };
 
-    messages.unshift(newMessage); // Add to beginning
-    saveMessages(messages);
+    // Vercel Serverless functions are "Read-Only". They cannot save files to a folder like your computer can.
+    // For now, we will print the message to the Vercel logs and return a success message so your website doesn't crash!
+    console.log("New Contact Message Received:", newMessage);
 
     return NextResponse.json({ success: true });
   } catch (error) {
